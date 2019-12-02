@@ -1,8 +1,11 @@
+#Stephen Parry
+#December 2, 2019
+#Chord Analysis of the cure's disintegration
+
 library(chorrrds)
 library(tidyverse)
 library(chorddiag)
 
-##Chord Analysis of the cure's disintegration
 songs <- "the-cure" %>% 
   chorrrds::get_songs() 
 
@@ -15,7 +18,6 @@ disintegration %>%
   chorrrds::clean(message = FALSE)  %>%
   tidyr::separate(music, c("artist", "music"), 
                   sep = "(?<=cure) ", extra = "merge") -> chords_d
-
 
 chords_d %>% 
   group_by(music) %>% 
